@@ -11,7 +11,6 @@ def load_data(filename):
     with open(filename, 'r') as file:
         data = file.readlines()
     return {int(line.split('.')[0]): line[line.find('.') + 2:-1] for line in data}
-    # return {int(line.split('.')[0]): line.split('.')[1].strip() for line in data}
 
 def save_known_tasks(known_tasks):
     with open('known_tasks.pkl', 'wb') as f:
@@ -24,7 +23,18 @@ def load_known_tasks():
     except FileNotFoundError:
         return set()
 
-def display_task():
+def display_current_task():
+    global current_task_number, tasks
+    try:
+        task_text = tasks[current_task_number]
+
+        figure.clear()
+        text = figure.text(0.5, 0.5, f"${task_text}$", fontsize=12, ha='center', va='center')
+        canvas.draw()
+    except NameError:
+        display_next_task()
+
+def display_next_task():
     global current_task_number, tasks, answers
     if known_tasks:
         remaining_tasks = set(tasks.keys()) - known_tasks
@@ -43,25 +53,32 @@ def display_task():
     canvas.draw()
 
 def show_answer():
-    answer_text = answers[current_task_number]
-    figure.clear()
-    text = figure.text(0.5, 0.5, f"${answer_text}$", fontsize=12, ha='center', va='center')
-    canvas.draw()
+    try:
+        answer_text = answers[current_task_number]
+        figure.clear()
+        text = figure.text(0.5, 0.5, f"${answer_text}$", fontsize=12, ha='center', va='center')
+        canvas.draw()
+    except NameError:
+        display_next_task()
 
 def known():
-    known_tasks.add(current_task_number)
+    try:
+        known_tasks.add(current_task_number)
+    except NameError:
+        pass
+
     save_known_tasks(known_tasks)
-    display_task()
+    display_next_task()
 
 def not_known():
-    display_task()
+    display_next_task()
 
 def delete_known_tasks():
     try:
         os.remove('known_tasks.pkl')
         global known_tasks
         known_tasks = set()
-        lbl_question.config(text="Known tasks reset. Press 'Show Next Task' to continue.")
+        lbl_question.config(text="Known tasks reset. Press 'Show Current Task' to continue.")
     except FileNotFoundError:
         lbl_question.config(text="No known tasks file to delete.")
 
@@ -79,8 +96,8 @@ root.title("Learning Tasks")
 btn_frame = tk.Frame(root)
 btn_frame.pack(fill=tk.BOTH, expand=True)
 
-btn_next = tk.Button(btn_frame, text="Show Next Task", command=display_task)
-btn_next.pack(side=tk.LEFT, expand=True, fill=tk.BOTH)
+btn_current = tk.Button(btn_frame, text="Show Current Task", command=display_current_task)
+btn_current.pack(side=tk.LEFT, expand=True, fill=tk.BOTH)
 
 btn_answer = tk.Button(btn_frame, text="Show Answer", command=show_answer)
 btn_answer.pack(side=tk.LEFT, expand=True, fill=tk.BOTH)
@@ -94,7 +111,7 @@ btn_unknown.pack(side=tk.LEFT, expand=True, fill=tk.BOTH)
 btn_delete = tk.Button(btn_frame, text="Delete Known Tasks", command=delete_known_tasks)
 btn_delete.pack(side=tk.LEFT, expand=True, fill=tk.BOTH)
 
-lbl_question = tk.Label(root, text="Press 'Show Next Task' to start.", font=('Arial', 12))
+lbl_question = tk.Label(root, text="Press 'Show Current Task' to start.", font=('Arial', 12))
 lbl_question.pack(pady=20)
 
 figure = plt.Figure(figsize=(60, 6))
