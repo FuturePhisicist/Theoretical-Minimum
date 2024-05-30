@@ -1,0 +1,77 @@
+1. \text{Функция возрастает (убывает) в точке, если } \exists\varepsilon>0: \forall x_1, x_2\in B^0(x_0), x_1<x_0<x_2 \Rightarrow f(x_1) < f(x_2) \text{ (}f(x_1) > f(x_2)\text{)}
+2. \text{Функция возрастает (убывает) на мн-ве } D, \text{ если } \forall x_1, x_2\in D, x_1<x_2 \Rightarrow f(x_1) < f(x_2) \text{ (}f(x_1) > f(x_2)\text{)}
+3. \text{Функция выпукла вверх (вниз) в } x_0, \text{ если } \exists B_\delta(x_0): \forall x \in B^o_\delta(x_0) \Rightarrow f(x) < f(x_0) + f'_{x_0} \cdot (x - x_0)
+4. x_0 \text{ - точка перегиба, если меняет направление выпуклости и дважды дифференцируема}
+5. f''(x_0) = 0
+6. x^0 \text{ - loc. extr, если она или loc. min, или loc. max.}
+7. \exists\delta > 0: \forall x \in B^o_\delta(x_0) \Rightarrow f(x) < f(x_0) \text{ - loc. min, } f(x) > f(x_0) \text{ - loc. max.}
+8. f'(x_0) = 0 \text{ или } \nexists
+9. f \in D\{B^o_\delta(x_0)\}, \forall x_1, x_2 \in B^o_\delta(x_0): x_1 < x_0 < x_2 \Rightarrow \text{sign}(f'(x_1)) < \text{sign}(f'(x_2)) \text{ - мин. и наоборот - макс. } | f'(x_0) = 0 \text{ и } \exists f''(x_0). \text{ Если } f''(x_0) < 0 \Rightarrow \text{строгий максимум, если } f''(x_0) > 0 \Rightarrow \text{строгий минимум} | f n \text{ раз дифф-ма, }(n>2) \text{ и } f'(x_0) = \ldots = f^{(n-1)}(x_0) = 0, \text{ а } f^n(x_0) \neq 0, \text{ если } n \text{ четно, то далее по предыдущему признаку}
+10. \forall\varepsilon > 0 \exists\delta(\varepsilon) > 0: \forall V - \text{размеченного разбиения, } \Delta_V < \delta \Rightarrow |I - \sum_{i=1}^n(f(\xi_i)\Delta x_i)| < \varepsilon
+11. s(T) = \sum_{k=1}^n(m_k\Delta x_k) | S(T) = \sum_{k=1}^n(M_k\Delta x_k)
+12. 1) s_{t_1} \leq S_{t_2}; 2) s_t = \inf_{\xi_1\ldots\xi_n}(\sigma(f: \xi_1\ldots\xi_n)), S_t = \sup_{\xi_1\ldots\xi_n}(\sigma(f: \xi_1\ldots\xi_n)); 3) S_t - s_t = \sum_{k=1}^{k_t}(\omega_k(f)\Delta x_k)
+13. I^* = \inf\{S\}, \inf \text{ по всем } V | I_* = \sup\{s\}, \sup \text{ по всем } V
+14. I_* = \lim_{\lambda(T)\to0}(s(f, T)); \text{ Огран. ф-ция интегрируема на отр-ке только если } I^* = I_*
+15. \forall\varepsilon>0 \exists V - \text{разм. разб.: } |s-S|<\varepsilon
+16. \text{Непрерывна на отр-ке } \Rightarrow \text{ интегрируема на нем, Монотонна на отр-ке } \Rightarrow \text{ интегрируема на нем, определенная и ограниченная, а также имеет конечное число точек разрыва на отр-ке } \Rightarrow \text{ you guessed it}
+17. \int_a^b f(x) \, dx = F(b) - F(a)
+18. \int_a^b (U \cdot V') \, dx = (U \cdot V) \big|_a^b - \int_a^b (U' \cdot V) \, dx
+19. \int_a^b f(x) \, dx = \int_a^b f(\phi(t)) \cdot \phi'(t) \, dt
+20. f^-(x) = \frac{1}{b-a}\int_a^b f(x) \, dx
+21. f \text{ непр-на } \Rightarrow \exists c: f(c)(b - a) = \int_a^b f(x) \, dx
+22. \text{Если } f, g \text{ интегр. на } [a, b], g \text{ не меняет знак на } [a, b], \text{ то } \exists\mu \in [\inf\{f(x)\}, \sup\{f(x)\}]: \int_a^b f(x)g(x) \, dx = \mu\int_a^b g(x) \, dx
+23. \text{Если } f, g \text{ интегр. на } [a, b], g - \text{ монотонна на } [a, b], \exists\mu \in [a,b]: \int_a^b f(x)g(x) \, dx = g(a)\int_\mu^a f(x) \, dx + g(b)\int_b^\mu f(x) \, dx
+24. \int_a^{+\infty} f(x) \, dx := \lim_{B\to+\infty}(\int_a^B f(x) \, dx)
+25. \lim_{\delta\to+0}(\int_{b - \delta}^a f(x) \, dx)
+26. \forall\varepsilon>0 \exists\delta(\varepsilon) > 0: \forall b_1, b_2 > \delta \Rightarrow |\int_{b_2}^{b_1} f(x) \, dx| < \varepsilon
+27. \exists\varepsilon>0 \forall\delta > 0: \exists b_1, b_2 > \delta \Rightarrow |\int_{b_2}^{b_1} f(x) \, dx| \geq \varepsilon
+28. \forall\varepsilon>0 \exists\delta(\varepsilon) > 0: \forall c_1, c_2: 0 < c_1 < c_2 < \delta \Rightarrow |\int_{b - c_1}^{b - c_2} f(x) \, dx| < \varepsilon
+29. \exists\varepsilon>0 \forall\delta > 0: \exists c_1, c_2: 0 < c_1 < c_2 < \delta \Rightarrow |\int_{b - c_1}^{b - c_2} f(x) \, dx| \geq \varepsilon
+30. \alpha>1 \Rightarrow \text{ никак не сходится, } \alpha\leq1 \Rightarrow \text{ абс. не сходится, условно сходится}
+31. \text{абс. не сходится, условно сходится}
+32. \varepsilon>0 \Rightarrow \text{ никак не сходится, } \varepsilon\leq0 \Rightarrow \text{ абс. сходится, условно сходится}
+33. p<0 \Rightarrow \text{ никак не сходится, } p\geq0 \Rightarrow (\varepsilon>0 \Rightarrow \text{ никак не сходится, } \varepsilon\leq0 \Rightarrow \text{ абс. сходится, условно сходится})
+34. v.p. \int_{-\infty}^{+\infty} f(x) \, dx := \lim_{A\to+\infty}(\int_{-A}^A f(x) \, dx)
+35. \text{Пусть } c - \text{особая точка. } v.p. \int_a^b f(x) \, dx := \lim_{\varepsilon\to+0}(\int_{c - \varepsilon}^a f(x) \, dx) + \lim_{\varepsilon\to+0}(\int_b^{c + \varepsilon} f(x) \, dx)
+36. \text{Если } |f(x)| \leq g(x), x \geq a \Rightarrow \text{если } \int_a^{+\infty} g(x) \, dx \text{ сходится, то } \int_a^{+\infty} f(x) \, dx \text{ сходится АБСОЛЮТНО}
+37. \text{Если } f = O^*(g), x \to +\infty, \text{ то } \int_a^{+\infty} f(x) \, dx \text{ сходится } \Leftrightarrow \int_a^{+\infty} g(x) \, dx \text{ сходится}
+38. \text{Если } f(x) \sim c/x^\alpha \text{ при } x \to +\infty, \text{ то при } p>1 \text{ инт. от } a \text{ сходится и наоборот}
+39. \text{Если } (1) \text{первообразная } f(x) \text{ ограничена и } (2) g(x) \text{ монотонно стремится к 0 (начиная с какого-то } x_0 \geq a), \text{ то }  \int_a^{+\infty} (f(x)g(x) \, dx) \text{ сходится}
+40. \int_a^{+\infty} f(x) \, dx \text{ сходится АБСОЛЮТНО, если } \int_a^{+\infty} (|f(x)| \, dx) \text{ сходится}
+41. \int_a^{+\infty} f(x) \, dx \text{ сходится УСЛОВНО, если } \int_a^{+\infty} f(x) \, dx \text{ сходится, а } \int_a^{+\infty} (|f(x)| \, dx) \text{ нет}
+42. S = \frac{1}{2}(\int_{\alpha}^{\beta} (x(t)y'(t) - y(t)x'(t)) \, dx)
+43. S = \frac{1}{2}(\int_{\alpha}^{\beta} (r^2(\phi) \, d\phi))
+44. L = \int_a^b \sqrt{1 + (y'(x))^2} \, dx
+45. L = \int_{\phi_1}^{\phi_2} \sqrt{(r')^2 + r^2} \, dr
+46. S = 2\pi \cdot \int_a^b (f(x)\sqrt{1 + (f'(x))^2}) \, dx
+47. V = \pi \cdot \int_a^b (f^2(x) \, dx)
+48. \forall\varepsilon > 0 \exists N(\varepsilon), \text{т.ч. } \forall n\geq N \rho(M_n, A)<\varepsilon
+49. \text{У любой огран. последовательности } \{x^{(n)}\} \text{ выделяется сходящаяся подпосл-сть}
+50. a \text{ - предел, если } \forall\varepsilon > 0 \exists N(\varepsilon), \delta(\varepsilon), \text{ т.ч. } \forall n\geq N \rho(M_n, M_0)<\delta \Rightarrow |f(M_n) - a|<\varepsilon
+51. a \text{ - предел, если } \forall\varepsilon > 0 \exists N(\varepsilon), \delta(\varepsilon), \text{ т.ч. } \forall n\geq N \rho(M_n, 0)>1/\delta \Rightarrow |f(M_n) - a|<\varepsilon
+52. \text{предел } \exists, \text{ если } \forall\varepsilon > 0 \exists N(\varepsilon), \delta(\varepsilon), \text{ т.ч. } \forall n1, n2\geq N \rho(M_N, M_0)<\delta \Rightarrow |f(M_{n1}) - f(M_{n2})| < \varepsilon
+53. \text{предел } \exists, \text{ если } \forall\varepsilon > 0 \exists N(\varepsilon), \delta(\varepsilon), \text{ т.ч. } \forall n1, n2\geq N \rho(M_N, 0)>1/\delta \Rightarrow |f(M_{n1}) - f(M_{n2})| < \varepsilon
+54. \lim_{x1\to x1_0 \ldots xn\to xn_0}(f(x1, \ldots, xn)) = f(x1_0, \ldots, xn_0)
+55. \forall\varepsilon > 0 \exists\delta(\varepsilon) > 0: \rho(M_n, M_0)<\delta \Rightarrow |f(M_n) - f(M_0)| < \varepsilon
+56. \text{Если } f \text{ непрерывна на компакте } D, \text{ то она равномерно непрерывна на } D
+57. \text{Пусть } x_i = g_i(t_1, \ldots, t_k) \in C\{a = (a_1, \ldots, a_k)\}, \text{ а } f(x_1, \ldots, x_k) \in C\{b = (b_1, \ldots, b_n)\}, \text{ где } b_j = g_j(a_1, \ldots, a_k). \text{ Тогда } f(x(t)) \in C\{a\}.
+58. \text{Если } f(x1_0, \ldots, xn_0) \neq 0 \text{ и непр-на в точке, то } \exists\varepsilon: \forall x1, \ldots, xn, \text{ т.ч. } \rho(M_0, M_k)<\varepsilon \Rightarrow f(M_k) \neq 0
+59. \text{Если } f \text{ непр-на, } c \in [\min(f(M_0), f(M_1)), \max(f(M_0), f(M_1))], \text{ то } \forall \text{ непр. кривой, начинающейся в } M_0 \text{ и заканчивающейся в } M_1 \exists\{x0_k, \ldots, xn_k\}, f(\ldots) = c
+60. \text{Если } f \text{ – непрерывна на компакте } K \subset \mathbb{R}^m, \text{ то } f \text{ – ограничена на } K
+61. f'_x=\lim_{\Delta x\to 0}(f(x_0+\Delta x, \ldots, x_n)/\Delta x)
+62. \text{Пусть } f \text{ опред. в нек. окр-ти точки } M_0. f \text{ - дифф-ма, если } f(x0 + \Delta x, y0 + \Delta y) - f(x0, y0) = A \cdot \Delta x + B \cdot \Delta y + \alpha(\rho) \cdot \rho, \lim_{\rho\to 0}(\alpha(\rho)) = 0
+63. u=f(x_1, \ldots, x_m) \Rightarrow du = \left(\frac{df}{dx_1}(M)\right)\Delta x_1 + \ldots + \left(\frac{df}{dx_m}(M)\right)\Delta x_m
+64. d^n(f(x^0)) = \delta(d^{n - 1}(f))(x0), \text{ где } df = \sum^n_i\left(\frac{\partial f}{\partial x_i} \cdot dx_i\right)
+65. ???
+66. f(x_1, \ldots x_m) = f(x_1^0, \ldots x_m^0) + \sum_{k = 1}^n\left(\frac{1}{k!}[(x_1 - x_1^0)\frac{\partial}{\partial x_1} + \ldots + (x_m - x_m^0)\frac{\partial}{\partial x_m}]^k_f\bigg|_{(x_1^0, \ldots x_m^0)}\right) + R_{n + 1}(x_1, \ldots x_m), \text{ где } R = \frac{1}{(n + 1)!}[(x_1 - x_1^0)\frac{\partial}{\partial x_1} + \ldots + (x_m - x_m^0)\frac{\partial}{\partial x_m}]^f^{n + 1}\bigg|_{(x_1^0 + \theta(x_1 - x_1^0), \ldots x_m^0 + \theta(x_m - x_m^0))}, 0 < \theta < 1
+67. M^0 = (x_1^0, \ldots x_m^0, y^0) (1) F(M^0) = 0, (2) F \in D\{M^0\} (3) \frac{\partial F(M^0)}{\partial y} \neq 0 \Rightarrow \forall\varepsilon > 0 \exists\delta(\varepsilon)>0: \forall x \in B_\delta(M0):
+68. ???
+69. ???
+70. x^0 = (x_1^0, \ldots, x_n^0), x^0 \in D(f(x) = f(x_1, \ldots, x_n)) - loc. max, \text{ если } \forall x \in B_\delta^o(x0), B_\delta^o(x0) \subset D(f) \Rightarrow \Delta f = f(x) - f(x^0) < 0.
+71. x^0 = (x_1^0, \ldots, x_n^0), x^0 \in D(f(x) = f(x_1, \ldots, x_n)) - loc. min, \text{ если } \forall x \in B_\delta^o(x0), B_\delta^o(x0) \subset D(f) \Rightarrow \Delta f = f(x) - f(x^0) > 0.
+72. x^0 = (x_1^0, \ldots, x_n^0), x^0 \in D(f(x) = f(x_1, \ldots, x_n)) - loc. extr, \text{ если } \forall x \in B_\delta^o(x0), B_\delta^o(x0) \subset D(f) \Rightarrow \Delta f = f(x) - f(x^0) \neq 0.
+73. \text{Если у } f(x) \text{ в } x^0 \forall k = 1, \ldots, n \exists f'_{x_k}, \text{ и } x^0 \text{ - loc. extr } \Rightarrow \forall k = 1, \ldots, n f'_{x_k} = 0
+74. \text{Пусть функция } f(x) = f (x_1, \ldots, x_n) \text{ от } n \text{ независимых переменных, } f \in D\{B_\delta(x^0 = (x_1^0, \ldots, x_n^0))\}, f \in D^2\{x^0\}. \text{ Пусть } x^0 \text{ - стационарная точка. Тогда, если } d^2(f(x^0)) \text{ - знакоопределённая квадратичная форма, то } x^0 \text{ - loc. extr. При этом, если } d^2(f(x^0)) \text{ положительно определена, то } x_0 \text{ - loc. min, если } d^2(f(x^0)) \text{ отрицательно определена, то } x_0 \text{ - loc. max. Если же } d^2(f(x^0)) \text{ знакопеременна, то } \nexists \text{ loc. extr. } | x_0 = (x_1^0,...,x_n^0) \text{ - стационарная для } f(x) = f(x_1, ..., x_n), x \in D(f(x)), \forall k = 1, ..., n \exists f'_{x_k} = 0.
+75. \text{Пусть в } G \subseteq \mathbb{R}^{n + m} \text{ задана функция от } n + m \text{ переменных } f(x_1, ..., x_n, y_1, ..., y_m) \text{ и (*) система уравнений: } \{ F1(x_1, ..., x_n, y_1, ..., y_m) = 0; \ldots Fm(x_1, ..., x_n, y_1, ..., y_m) = 0\}. \text{ Условным локальным экстремумом функции } f \text{ при условиях связи (*) называется } M^0 = (x_1^0, \ldots x_n^0, y_1^0, \ldots y_m^0), \text{ такая что её координаты удовлетворяют условиям связи (*) и } \exists B_\delta(M^0), \delta > 0, \text{ в пределах которой значение функции } f(M^0) \text{ является наибольшим (наименьшим) среди её значений во всех точках этой окрестности, которые удовлетворяют условиям связи (*).}
+76. ???
+77. ???
